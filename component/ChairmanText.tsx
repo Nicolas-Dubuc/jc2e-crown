@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { Typography } from '@mui/material';
+import favorIcon from './FavorIcon';
 
 interface ChairmanProps {
   currentPlayer: string | string[];
@@ -9,10 +10,17 @@ interface ChairmanProps {
 
 export default function Chairman({ currentPlayer, climate}: ChairmanProps) {
   let chairmanText = '';
+  let favorComponent = favorIcon({ number: -1, description: 'yo' });
 
-  // Player-based text
+  // Player-based text with favorIcon for Player
   if (currentPlayer === 'Player') {
-    chairmanText = 'The Player reigns as Chairman, steering the empire with bold moves.';
+    return(
+    <div>
+        {favorIcon({ number: -1, description: 'You must always perform this favor if able.' })} 
+    </div>
+    )
+    chairmanText = 'The Player reigns as Chairman, steering the empire with bold moves and holds favor';
+    favorComponent = favorIcon({ number: -1, description: 'yo' }); 
   } else if (currentPlayer === 'Crown') {
     chairmanText = 'The Crown holds the Chairman seat, commanding with regal authority.';
   } else if (currentPlayer === 'Vacant') {
@@ -49,6 +57,7 @@ export default function Chairman({ currentPlayer, climate}: ChairmanProps) {
       <Typography variant="body1" style={{ color: 'white', margin: '10px 0' }}>
         {fullText}
       </Typography>
+        {favorComponent}
     </div>
   );
 }
