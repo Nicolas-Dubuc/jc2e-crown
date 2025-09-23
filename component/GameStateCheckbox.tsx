@@ -11,7 +11,7 @@ const StyledCheckbox = styled(Checkbox)({
 });
 
 interface GameStateCheckboxProps {
-  gameStates: { governorGeneral: boolean; china: boolean; twoPlayers: boolean };
+  gameStates: { governorGeneral: boolean; china: boolean; twoPlayers: boolean; deregulation: boolean };
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -43,6 +43,17 @@ export default function GameStateCheckbox({ gameStates, onChange }: GameStateChe
             />
           }
           label="China"
+          style={{ marginBottom: '-10px' }}
+        />
+        <FormControlLabel
+          control={
+            <StyledCheckbox
+              name="deregulation"
+              checked={gameStates.deregulation}
+              onChange={onChange}
+            />
+          }
+          label="Deregulation"
           style={{ marginBottom: '-10px' }}
         />
         <FormControlLabel

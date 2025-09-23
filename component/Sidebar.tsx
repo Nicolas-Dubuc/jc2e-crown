@@ -32,6 +32,7 @@ export default function Sidebar({
       governorGeneral: boolean;
       china: boolean;
       twoPlayers: boolean;
+      deregulation: boolean
     }>
   >;
   setOfficeStates: React.Dispatch<
@@ -45,6 +46,7 @@ export default function Sidebar({
     governorGeneral: false,
     china: false,
     twoPlayers: false,
+    deregulation: false
   });
   const [officeStates, setLocalOfficeStates] = useState<{
     [key: string]: string | string[];
