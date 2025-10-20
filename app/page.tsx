@@ -56,7 +56,6 @@ export default function Home() {
       <div style={{ flexGrow: 1, padding: '20px', color: 'white' }}>
         <Typography variant="h4" style={{ marginBottom: '20px' }}>
           Crown Handbook - Turn Summary
-          {vacantCount}
         </Typography>
         <VoteDeregulate deregulation={gameStates['deregulation']} climate={climate} />
         <LondonSeason deregulation={gameStates['deregulation']} />
